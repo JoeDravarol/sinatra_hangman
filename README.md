@@ -10,6 +10,6 @@ To view this app, click [here]()
 1. Clone your forked repository onto your local computer.
 1. Use `cd sinatra_hangman` to move into the project folder.
 1. Run `rackup -p 4567` to start the server
-1. In your browser, navgiate to [http://localhost:4567/](http://localhost:4567/)
+1. In your browser, navigate to [http://localhost:4567/](http://localhost:4567/)
 
 Created as part of The Odin Project's [curriculum](https://www.theodinproject.com/courses/ruby-on-rails/lessons/sinatra-project?ref=lnav)

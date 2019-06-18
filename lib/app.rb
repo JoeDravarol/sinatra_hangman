@@ -8,6 +8,11 @@ class HangmanApp < Sinatra::Base
   end
 
   get '/' do
-    'Hello World!'
+    erb :index, layout: :main
+  end
+
+  post '/game' do
+    word_length = params["word_length"].to_i
+    "Game #{word_length}"
   end
 end

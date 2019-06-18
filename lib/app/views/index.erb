@@ -1,8 +1,6 @@
-<html>
-  <head>
-    <title>Hangman</title>
-  </head>
-  <body>
-    <h1>Hangman</h1>
-  </body>
-</html>
+<form action="/game" method="POST">
+  <input id="slider" type="range" min="4" max="10" value="5" name="word_length">
+  <p>Word length: <span id="slider_val">5</span></p>
+  <input type="submit" value="Play Game">
+</form>
+<script src="/scripts/setting.js"></script>
