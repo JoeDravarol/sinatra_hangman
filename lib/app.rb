@@ -2,6 +2,7 @@ require 'hangman'
 
 class HangmanApp < Sinatra::Base
   set :root, 'lib/app'
+  enable :sessions
 
   configure :development do
     register Sinatra::Reloader
@@ -12,7 +13,12 @@ class HangmanApp < Sinatra::Base
   end
 
   post '/game' do
-    word_length = params["word_length"].to_i
-    "Game #{word_length}"
+    @word_length = params["word_length"].to_i
+    redirect '/game'
+  end
+
+  get '/game' do
+    @word_length = params["word_length"].to_i
+    erb :game, layout: :main
   end
 end
