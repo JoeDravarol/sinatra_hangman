@@ -13,12 +13,14 @@ class HangmanApp < Sinatra::Base
   end
 
   post '/game' do
-    @word_length = params["word_length"].to_i
+    session[:word_length] = params["word_length"].to_i
     redirect '/game'
   end
 
   get '/game' do
-    @word_length = params["word_length"].to_i
+    @word_length = session[:word_length]
+    @guess_left = 6
+    @secret_word = "H A _ _ _ A _ "
     erb :game, layout: :main
   end
 end

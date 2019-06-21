@@ -153,3 +153,20 @@ input[type=range]:focus::-ms-fill-upper {
 .used-letter-btn {
   background: #F02;
 }
+
+/* Game CSS */
+.flex-container {
+  display: flex;
+  width: 500px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.heart {
+  width: 50px;
+}
+
+.secret-word {
+  margin: 2em;
+  font-size: 3em;
+}

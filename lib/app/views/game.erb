@@ -1,9 +1,12 @@
-<div>
-  <img src="" alt="hangman">
-  <p>
-    <%= "secret_word" %>
-  </p>
+<div class="flex-container">
+  <% @guess_left.times do %>
+    <img class="heart" src="/images/pixel-heart.png" alt="hangman">
+  <% end %>
 </div>
+
+<p class="secret-word">
+  <%= @secret_word %>
+</p>
 
 <div id="alphabet-container" class="alphabet-container"></div>
 <script src="/scripts/onscreen-keyboard.js"></script>
