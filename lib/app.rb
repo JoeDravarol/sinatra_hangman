@@ -18,9 +18,25 @@ class HangmanApp < Sinatra::Base
   end
 
   get '/game' do
-    @word_length = session[:word_length]
-    @guess_left = 6
-    @secret_word = "H A _ _ _ A _ "
+    session[:status] ||= Hangman.set_game(session[:word_length])
+    @status = session[:status]
     erb :game, layout: :main
+  end
+
+  post '/game' do
+    @status = session[:status]
+    guess = params["guess"]
+    session[:status] = Hangman.play(@status, guess)
+    redirect Hangman.game_over?(@status)
+  end
+
+  get "/win" do
+    @status = session.delete(:status)
+    erb :win, layout: :main
+  end
+
+  get "/lose" do
+    @status = session.delete(:status)
+    erb :lose, layout: :main
   end
 end

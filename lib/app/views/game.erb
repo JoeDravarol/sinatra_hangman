@@ -1,11 +1,14 @@
 <div class="flex-container">
-  <% @guess_left.times do %>
+  <% @status[:turns].times do %>
     <img class="heart" src="/images/pixel-heart.png" alt="hangman">
   <% end %>
 </div>
 
 <p class="secret-word">
-  <%= @secret_word %>
+  <%= @status[:hidden_word].join(" ") %>
 </p>
 
-<script src="/scripts/onscreen-keyboard.js"></script>
+<form action="/game" method="post">
+  <input type="text" name="guess" maxlength="1" required="true" />
+  <input type="submit" value="Submit" />
+</form>
