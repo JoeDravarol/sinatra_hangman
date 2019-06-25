@@ -12,7 +12,7 @@ class HangmanApp < Sinatra::Base
     erb :index, layout: :main
   end
 
-  post '/game' do
+  post '/' do
     session[:word_length] = params["word_length"].to_i
     redirect '/game'
   end
